@@ -6,15 +6,10 @@ function Dashboard({user}) {
   const [count, setcount] = useState(0);
   const [attendace, setattendance] = useState(0);
 
-
-  useEffect(() => {
-    (async () => {
-      if (user) {
-        await task();
-        await attendance();
-      }
-    })();
-  }, [user]);
+  useEffect(() => {(async()=>{ task()
+    attendance()})()
+   
+  }, [])
 
   async function task() {
     var taskarr = await axios.get(`${API}/task/${user}`,{
