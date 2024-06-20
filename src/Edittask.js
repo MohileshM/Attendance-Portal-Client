@@ -7,17 +7,13 @@ import {API} from './global.js';
 function Edittask({user}) {
     let params = useParams();
     const navigate = useNavigate();
-    
-   
-  useEffect(() => {
-    (async () => {
-      const userData = await axios.get(`${API}/getbyid/${params.id}`);
-      console.log(userData.data[0]);
-      formik.setFieldValue('sourcelink', userData.data[0].sourcelink);
-      formik.setFieldValue('deploylink', userData.data[0].deploylink);
-      formik.setFieldValue('classnumber', userData.data[0].classnumber);
-    })();
-  }, [params.id, formik]); 
+    useEffect(() => {(async()=>{ let userData = await axios.get(`${API}/getbyid/${params.id}`);
+    console.log(userData.data[0]);
+     formik.setFieldValue('sourcelink',userData.data[0].sourcelink)
+     formik.setFieldValue('deploylink',userData.data[0].deploylink)
+     formik.setFieldValue('classnumber',userData.data[0].classnumber)})()
+       
+        },[])
 
 
   const formik = useFormik({
