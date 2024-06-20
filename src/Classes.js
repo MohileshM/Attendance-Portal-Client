@@ -5,14 +5,17 @@ import { useEffect } from 'react';
 var clsarr = ["class01", "class02", "class03", "class04", "class05", "class06", "class07", "class08", "class09", "class10",
     "class11", "class12", "class13", "class14", "class15", "class16", "class17", "class18", "class19", "class20"]
 
-    function Classes({user}) {
-    var navigate = useNavigate();
-    useEffect( () => {(async()=>{if(user=== null){
-        alert("Login");
-        navigate("/login")
-    }})()
-        
-      }, [])
+function Classes({ user }) {
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        (async () => {
+            if (user === null) {
+                alert("Login");
+                navigate("/login");
+            }
+        })();
+    }, [user, navigate]); 
     return (
         <>
             <div className='text-left'><h2>Class</h2></div>
