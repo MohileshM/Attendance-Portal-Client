@@ -4,6 +4,6 @@ and additionally added task submission and validation
 
 Used Axios,Chart.js
 
-This project deployed for both student and mentor side to make it easily understandable
+NOTE : This project deployed for both student and mentor side to make it easily understandable
 
 
